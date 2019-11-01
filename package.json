@@ -23,6 +23,7 @@
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-service": "^4.0.0",
     "babel-eslint": "^10.0.3",
+    "consola": "^2.10.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.10.3",

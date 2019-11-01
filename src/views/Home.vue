@@ -40,6 +40,7 @@ import { forkJoin } from 'rxjs'
 import { Divider, Button } from 'ant-design-vue'
 import store from '@/store/index'
 import OptionSelector from '@/components/OptionSelector'
+import { delay } from '@/util/tool'
 import { mockOptions } from '@/api/mock'
 
 export default {
@@ -132,29 +133,22 @@ export default {
     }
   },
   methods: {
-    wait(timer = 1000) {
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve()
-        }, timer)
-      })
-    },
     setSelectorKey(key, value) {
       this.$store.commit('set_value', { key, value })
     },
     // 请求A数据源
     async fetchAOption() {
-      await this.wait()
+      await delay()
       this.AOptions = mockOptions('A').options
     },
     // 请求B数据源
     async fetchBOption() {
-      await this.wait(2500)
+      await delay(2500)
       return mockOptions('B').options
     },
     // 请求C数据源
     async fetchCOption() {
-      await this.wait(4000)
+      await delay(4000)
       return mockOptions('C').options
     },
     handleChange(key, value) {

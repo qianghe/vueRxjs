@@ -9,6 +9,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/dynamic',
+    name: 'dynamic',
+    component: () => import('../views/Dynamic/index.vue')
   }
 ]
 
